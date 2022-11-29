@@ -104,7 +104,7 @@ class Enrollment(models.Model):
 
 class Question(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE, default="")
-    content = models.CharField(max_length=200, default="content")
+    question_text = models.CharField(max_length=200, default="")
     grade =  models.IntegerField(default=0)
     
     
@@ -127,7 +127,7 @@ class Question(models.Model):
     # Other fields and methods you would like to design
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE, default="")
-    content = models.CharField(max_length=200, default="content")
+    choice_text = models.CharField(max_length=200, default="")
     is_correct =  models.BooleanField(default=False)
 
 # <HINT> The submission model
